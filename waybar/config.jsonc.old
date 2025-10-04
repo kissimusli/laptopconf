@@ -1,0 +1,32 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 45, // Waybar height (to be removed for auto height)
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/startrek",
+        "hyprland/workspaces"
+
+    ],
+    "modules-center":[
+    "clock",
+    "battery",
+    "network",
+    "custom/mullvad"    
+    ],
+    "modules-right": [
+        "custom/nvidia",
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/bluetooth",
+        "pulseaudio"
+
+    ],
+    //Modules configuration
+    "include": [
+		"~/.config/waybar/modules.json"
+	]
+}

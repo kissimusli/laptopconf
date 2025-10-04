@@ -1,0 +1,111 @@
+{
+    "custom/startrek": { //star trek icon
+       "format": "icon", // text doesn't matter; will be hidden or replaced via CSS
+       "tooltip": false,
+       "on-click": "wofi --show drun"
+    },
+
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "󰖁 {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "󰖩 {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{essid}\n{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+	"on-click": "sh ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+    },
+    "cpu": {
+        "format": "󰬊󰬗󰬜 {usage}",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "󰬔󰬌󰬔 {}",
+	"tooltip": true
+    },
+    "temperature": {
+        "interval": 10,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": "󰬛󰬌󰬔󰬗 {temperatureC}",
+        "format": "󰬛󰬌󰬔󰬗 {temperatureC}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": " {time}",
+        "format-icons": ["", "", "", "", ""],
+    },
+    "clock": {
+        "format": "{:%H:%M | %e %B} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "custom/bluetooth": {
+    "format": " {}",
+    "interval": 10,
+    "exec": "~/.config/waybar/scripts/bluetooth-status.sh",
+    "on-click": "blueman-manager"
+    },
+    "custom/nvidia": {
+    "exec": "~/.config/waybar/scripts/nvidia-status.sh",
+    "interval": 5,
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true
+    },
+    "custom/mullvad": {
+    "exec": "sh ~/.config/waybar/scripts/mullvad_status.sh",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "sh ~/.config/waybar/scripts/mullvad_configure.sh",
+    "return-type": "json"
+    },
+    "custom/networkspeeds": {
+    "exec": "sh ~/.config/waybar/scripts/network_speeds.sh",
+    "interval": 1,
+    "format": "{}",
+    "on-click": "bmon -p wlo1"
+    }
+
+
+
+
+}
+
+ 

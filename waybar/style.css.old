@@ -1,0 +1,190 @@
+* {
+    /* `otf-font-awesome` and Nerd Fonts like JetBrainsMono Nerd Font are required to be installed for icons */
+    font-family: "JetBrainsMono Nerd Font", "Fira Sans Semibold", "FontAwesome", Roboto, Helvetica, sans-serif;
+    font-size: 15px;
+    transition: background-color 0.3s ease-out;
+}
+
+
+#waybar {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2px 5px;
+  border-radius: 5px;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #ffffff; /* bright white text */
+}
+
+#waybar > * {
+  color: #ffffff; /* force children text color to white */
+  opacity: 1;      /* remove any transparency */
+  font-weight: 600; /* optional: make text a bit bolder */
+}
+
+.modules-left,
+.modules-right
+{
+    background: rgba(0, 0, 8, .7);
+    margin: 5px 10px;
+    padding: 0 5px;
+    border-radius: 15px;
+}
+.modules-left {
+    padding: 0;
+}
+.modules-center {
+    padding: 0 10px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#language,
+#mpd {
+    padding: 0 10px;
+    border-radius: 15px;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#custom-media:hover,
+#tray:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#language:hover,
+#mpd:hover {
+    background: rgba(26, 27, 38, 0.9);
+}
+
+#battery {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-charging.png");
+    background-repeat: no-repeat;
+    background-position: left center; /* ← fixed */
+    padding-left: 22px; /* leave space for the image */
+    min-height: 20px;
+    min-width: 50px;
+}
+
+/* When charging */
+#battery.charging {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-charging.png");
+    background-repeat: no-repeat;
+}
+
+/* When discharging */
+#battery.discharging {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-discharging.png");
+    background-repeat: no-repeat;
+}
+
+#battery:hover {
+    background-repeat: no-repeat;
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-charging.png");
+    background-position: left center;
+}
+
+#battery:hover.charging {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-charging.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+
+}
+
+#battery:hover.discharging {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-discharging.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+#battery.full,
+#battery.full:hover {
+    background-image: url("file:///home/oscar/.config/waybar/icons/icon-charging.png"); /* or your preferred icon */
+    background-repeat: no-repeat;
+    background-position: left center;
+/*    padding-left: 22px;
+    min-height: 20px;
+    min-width: 50px; */
+}
+
+
+#workspaces button {
+  background: transparent;
+  font-family:
+  SpaceMono Nerd Font,
+  feather;
+  font-weight: 900;
+  font-size: 13pt;
+  color: #c0caf5;
+  border:none;
+  border-radius: 15px;
+}
+
+#workspaces button.active {
+    background: #13131d; 
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+  box-shadow: none;
+}
+
+#custom-startrek {
+  background-image: url("file:///home/oscar/.config/waybar/icons/star-trek-white40.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-width: 35px;
+  min-height: 35px;
+  font-size: 0px;
+}
+
+#custom-startrek:hover {
+  background-image: url("file:///home/oscar/.config/waybar/icons/star-trek-black40.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-width: 35px;
+  min-height: 35px;
+  font-size: 0px;
+}
+
+#bluetooth {
+    padding: 0 10px;
+    border-radius: 15px;
+}
+
+#bluetooth:hover {
+    background: rgba(26, 27, 38, 0.9);
+}
+
+#custom-mullvad.connected {
+    color: limegreen;
+}
+
+#custom-mullvad.disconnected {
+    color: red;
+}
