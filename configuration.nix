@@ -68,10 +68,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Cinnamon Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = false;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "se";
@@ -136,7 +132,7 @@
   };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "oscar";
 
   # Install firefox.
@@ -175,9 +171,9 @@
    programs.hyprland.enable = true;
    
    services.greetd = {
-    enable = true;
+    enable = false;
       settings.default_session = {
-        command = "Hyprland";
+       command = "${pkgs.cage}/bin/cage -s ${pkgs.greetd.gtkgreet}/bin/gtkgreet";
         user = "oscar";
       };
    };
@@ -199,6 +195,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
    # Linux Utils 
+   greetd.gtkgreet
    util-linux  # for lsblk
    usbutils    # for lsusb
    udisks 
